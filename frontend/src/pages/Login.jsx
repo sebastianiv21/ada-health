@@ -67,11 +67,11 @@ function Login() {
             <section>
                 <form onSubmit={onSubmit}>
                     <div>
-                        <p>Correo electrónico</p>
+                        <label htmlFor="email">Correo electrónico</label>
                         <input type='text' id='email' name='email' value={email} placeholder='Ingrese su correo electrónico' onChange={onChange} />
                     </div>
                     <div>
-                        <p>Contraseña</p>
+                        <label htmlFor="password">Contraseña</label>
                         <input type='password' id='password' name='password' value={password} placeholder='Ingrese una contraseña' onChange={onChange} />
                     </div>
                     <div>
