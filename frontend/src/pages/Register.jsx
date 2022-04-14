@@ -62,23 +62,22 @@ function Register() {
     }
 
     return (
-        <>
-            <section>
-                <h1>
-                    <FaUser /> Registrarse
+        <div className='container-fluid'>
+            <section className='d-flex justify-content-center'>
+                <h1 className='text-primary'>
+                    <FaUser className='FaUser'/> Registrarse
                 </h1>
-                <p>Por favor cree una cuenta</p>
             </section>
 
-            <section>
-                <form onSubmit={onSubmit}>
+            <section className='d-flex justify-content-center mt-3'>
+                <form className='mx-auto' style={{width: "400px"}} onSubmit={onSubmit}>
                     <div>
                         <p>Nombre</p>
                         <input type='text' id='name' name='name' value={name} placeholder='Ingrese su nombre' onChange={onChange} />
                     </div>
-                    <div>
-                        <p>Correo electrónico</p>
-                        <input type='text' id='email' name='email' value={email} placeholder='Ingrese su correo electrónico' onChange={onChange} />
+                    <div className='form-floating mb-3'>
+                        <input className='form-control' type='text' id='email' name='email' value={email} placeholder='Ingrese su correo electrónico' onChange={onChange} />
+                        <label htmlFor="email" className='form-label'>Correo electrónico</label>
                     </div>
                     <div>
                         <p>Contraseña</p>
@@ -88,12 +87,12 @@ function Register() {
                         <p>Confirmar contraseña</p>
                         <input type='password' id='password2' name='password2' value={password2} placeholder='Confirmar contraseña' onChange={onChange} />
                     </div>
-                    <div>
-                        <button type="submit">Enviar</button>
+                    <div className='d-flex justify-content-center'>
+                        <button type="submit" class="btn btn-primary text-white">Enviar</button>
                     </div>
                 </form>
             </section>
-        </>
+        </div>
   )
 }
 

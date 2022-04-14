@@ -7,11 +7,18 @@ const User = require('../models/userModel')
 // @route POST /api/users
 // @access Public
 const registerUser = asyncHandler(async (req, res) => {
-    const { name, email, password } = req.body
+    const { identification_type, identification, name, lastname, sec_lastname, 
+            date_of_birth, gender, blood_type, rh, marital_status, EPS,
+            home_phone, mobile_phone, work_phone, address, city, department,
+            role, email, password,
+            contact_name, contact_lastname, contact_sec_lastname, contact_relationship, contact_phone,
+            last_login_date } = req.body
 
-    if (!name || !email || !password) {
+    if (!identification_type || !identification || !name || !lastname || 
+        !date_of_birth || !gender || !blood_type || !rh || !EPS ||
+        !role || !email || !password) {
         res.status(400)
-        throw new Error('Please add all fields')
+        throw new Error('Por favor ingrese todos los campos requeridos')
     }
 
     //Check if user exists
@@ -19,7 +26,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
     if (userExists) {
         res.status(400)
-        throw new Error('User already exists')
+        throw new Error('El usuario ya existe')
     }
 
     //Hash password
@@ -28,9 +35,12 @@ const registerUser = asyncHandler(async (req, res) => {
 
     //Create user
     const user = await User.create({
-        name,
-        email,
-        password: hashedPassword,
+        identification_type, identification, name, lastname, sec_lastname,
+        date_of_birth, gender, blood_type, rh, marital_status, EPS,
+        home_phone, mobile_phone, work_phone, address, city, department,
+        role, email, password: hashedPassword,
+        contact_name, contact_lastname, contact_sec_lastname, contact_relationship, contact_phone,
+        last_login_date
     })
 
     if (user) {
@@ -38,6 +48,7 @@ const registerUser = asyncHandler(async (req, res) => {
             _id: user.id,
             name: user.name,
             email: user.email,
+            role: user.role,
             token: generateToken(user._id),
         })
     }else {
@@ -60,11 +71,12 @@ const loginUser = asyncHandler(async (req, res) => {
             _id: user.id,
             name: user.name,
             email: user.email,
+            role: user.role,
             token: generateToken(user._id), 
         })
     } else {
         res.status(400)
-        throw new Error('Invalid credentials')
+        throw new Error('Credenciales inválidas')
     }
 })
 

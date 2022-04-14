@@ -56,30 +56,29 @@ function Login() {
     }
 
     return (
-        <>
-            <section>
-                <h1>
-                    <FaSignInAlt /> Iniciar Sesión
+        <div className='container-fluid'>
+            <section className='d-flex justify-content-center'>
+                <h1 className='text-primary'>
+                    <FaSignInAlt className='FaSignInAlt'/> Iniciar Sesión
                 </h1>
-                <p>Digite sus credenciales</p>
             </section>
 
-            <section>
-                <form onSubmit={onSubmit}>
-                    <div>
-                        <label htmlFor="email">Correo electrónico</label>
-                        <input type='text' id='email' name='email' value={email} placeholder='Ingrese su correo electrónico' onChange={onChange} />
+            <section className='d-flex justify-content-center mt-3'>
+                <form className='mx-auto' style={{width: "400px"}} onSubmit={onSubmit}>
+                    <div className='form-floating mb-3'>
+                        <input className='form-control' type='text' id='email' name='email' value={email} placeholder='Ingrese su correo electrónico' onChange={onChange} />
+                        <label htmlFor="email" className='form-label'>Correo electrónico</label>
                     </div>
-                    <div>
-                        <label htmlFor="password">Contraseña</label>
-                        <input type='password' id='password' name='password' value={password} placeholder='Ingrese una contraseña' onChange={onChange} />
+                    <div className='form-floating mb-3'>
+                        <input className='form-control' type='password' id='password' name='password' value={password} placeholder='Ingrese su contraseña' onChange={onChange} />
+                        <label htmlFor="password" className='form-label'>Contraseña</label>
                     </div>
-                    <div>
-                        <button type="submit">Enviar</button>
+                    <div className='d-flex justify-content-center'>
+                        <button type="submit" class="btn btn-primary text-white">Enviar</button>
                     </div>
                 </form>
             </section>
-        </>
+        </div>
   )
 }
 
