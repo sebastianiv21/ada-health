@@ -7,6 +7,7 @@ import App from './App';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
+import bootstrap from 'bootstrap'
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);

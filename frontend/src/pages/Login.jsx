@@ -58,14 +58,13 @@ function Login() {
     return (
         <div className='container-fluid'>
             <section className='d-flex justify-content-center mt-5'>
-                <h1 className='text-primary fw-bold'>
-                    <FaSignInAlt className='FaSignInAlt'/> Iniciar Sesión
+                <h1 className='text-primary fw-bold text-center fs-3'>
+                    <FaSignInAlt className='text-primary'/> Iniciar Sesión
                 </h1>
             </section>
-
             <section className='d-flex justify-content-center mt-3'>
-                <form className='mx-auto' style={{width: "400px"}} onSubmit={onSubmit}>
-                    <h4 className="text-center text-dark fw-bold mt-0 mb-4">Ingrese sus credenciales</h4>
+                <form className='mx-auto' onSubmit={onSubmit}>
+                    <h4 className="text-center text-dark fw-bold mt-0 mb-4 fs-5">Ingrese sus credenciales</h4>
                     <div className='form-floating mb-3'>
                         <input className='form-control' type='text' id='email' name='email' value={email} placeholder='Ingrese su correo electrónico' onChange={onChange} />
                         <label htmlFor="email" className='form-label'>Correo electrónico</label>

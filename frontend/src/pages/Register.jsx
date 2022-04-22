@@ -92,13 +92,13 @@ function Register() {
     return (
         <div className='container-fluid'>
             <section className='d-flex justify-content-center mt-5'>
-                <h1 className='text-primary fw-bold'>
-                    <FaUser className='FaUser'/> Registrarse
+                <h1 className='text-primary fw-bold fs-3'>
+                    <FaUser className='text-primary'/> Registrarse
                 </h1>
             </section>
             <section className='d-flex justify-content-center mt-3'>
                 <form className='mx-auto' onSubmit={onSubmit}>
-                    <h4 className="text-center text-dark fw-bold mt-0 mb-1">Información personal</h4>
+                    <h4 className="text-center text-dark fw-bold mt-0 mb-1 fs-5">Información personal</h4>
                     <div className="row g-2 mb-2">
                         <div className="col-sm-6">
                             <div className="form-floating">
@@ -145,7 +145,7 @@ function Register() {
                             </div>
                         </div>
                     </div>
-                    <h4 className="text-center text-dark fw-bold mt-0 mb-1">Información general</h4>
+                    <h4 className="text-center text-dark fw-bold mt-0 mb-1 fs-5">Información general</h4>
                     <div className="row g-2 mb-2">
                         <div className="col-sm-4">
                             <div className="form-floating">
@@ -209,7 +209,7 @@ function Register() {
                             </div>
                         </div>
                     </div>
-                    <h4 className="text-center text-dark fw-bold mt-0 mb-1">Datos de localización</h4>
+                    <h4 className="text-center text-dark fw-bold mt-0 mb-1 fs-5">Datos de localización</h4>
                     <div className="row g-2 mb-2">
                         <div className="col-sm-4">
                             <div className="form-floating">
@@ -250,7 +250,7 @@ function Register() {
                             </div>
                         </div>
                     </div>
-                    <h4 className="text-center text-dark fw-bold mt-0 mb-1">Información de la sesión</h4>
+                    <h4 className="text-center text-dark fw-bold mt-0 mb-1 fs-5">Información de la sesión</h4>
                     <div className="row g-2 mb-2">
                         <div className="col-sm-6">
                             <div className="form-floating">
@@ -285,7 +285,7 @@ function Register() {
                             </div>
                         </div>
                     </div>
-                    <h4 className="text-center text-dark fw-bold mt-0 mb-1">Información de contacto</h4>
+                    <h4 className="text-center text-dark fw-bold mt-0 mb-1 fs-5">Información de contacto</h4>
                     <div className="row g-2 mb-2">
                         <div className="col-sm-4">
                             <div className="form-floating">

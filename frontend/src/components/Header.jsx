@@ -1,4 +1,4 @@
-import { FaSignInAlt, FaSignOutAlt, FaUser } from 'react-icons/fa'
+import { FaSignInAlt, FaSignOutAlt, FaUserPlus } from 'react-icons/fa'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout, reset } from '../features/auth/authSlice'
@@ -15,31 +15,24 @@ function Header() {
   }
 
   return (
-    <nav className='navbar navbar-expand-sm bg-primary'>
-        <div className="container-fluid">
-        <div className='navbar-brand'>
-            <Link to='/' className='nav-link text-white'><img src='./logo-navbar.png' alt='ADA Health logo' width="50" /> ADA Health</Link>
-        </div>
-        <div>
-        <ul className="navbar-nav">
+    <header className='navbar bg-light d-flex align-items-center border-bottom border-primary border-2' style={{height: "60px"}}>
+        <ul className="navbar-nav ms-auto">
             {user ? (<li className='nav-item text-white'>
                 <button onClick={onLogout}>
                     <FaSignOutAlt /> Cerrar Sesión
                 </button>
-            </li>) : (<div className='d-flex'><li className='nav-item'>
-                <Link to='/login' className='nav-link text-white'>
-                    <FaSignInAlt /> Iniciar Sesión
+            </li>) : (<div className='d-flex'><li className='nav-item me-2'>
+                <Link to='/login' className='btn btn-light text-primary'>
+                    <FaSignInAlt />
                 </Link>
             </li>
-            <li className='nav-item'>
-                <Link to='/register' className='nav-link text-white'>
-                    <FaUser /> Registrarse
+            <li className='nav-item me-2'>
+                <Link to='/register' className='btn btn-light text-primary' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">
+                    <FaUserPlus />
                 </Link>
             </li></div>)}
         </ul>
-        </div>
-        </div>
-    </nav>
+    </header>
     /*<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
